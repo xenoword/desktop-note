@@ -1,0 +1,8 @@
+﻿faire la fenetre dragable
+faire la fenetre resiable in width
+max height personnalisable (par defaut ça ne peut pas sortir de la fenetre)
+afficher une barre de scroll
+choisir une couleur pour le fond de la note(genre pour l'importance logo parametre pour personaliser la note)
+réordonner les notes
+faire plusieurs catégorie (1 fichier par catégorie genre chevron vers le bas)
+TOUTES les couleurs personnalisables

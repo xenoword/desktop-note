@@ -1,0 +1,32 @@
+D:\code\Note desktop\Note desktop\bin\Debug\netcoreapp3.1\Note desktop.exe
+D:\code\Note desktop\Note desktop\bin\Debug\netcoreapp3.1\Note desktop.deps.json
+D:\code\Note desktop\Note desktop\bin\Debug\netcoreapp3.1\Note desktop.runtimeconfig.json
+D:\code\Note desktop\Note desktop\bin\Debug\netcoreapp3.1\Note desktop.runtimeconfig.dev.json
+D:\code\Note desktop\Note desktop\bin\Debug\netcoreapp3.1\Note desktop.dll
+D:\code\Note desktop\Note desktop\bin\Debug\netcoreapp3.1\Note desktop.pdb
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\Note desktop.csprojAssemblyReference.cache
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\App.g.cs
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\Note desktop_MarkupCompile.cache
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\Note desktop_MarkupCompile.lref
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\Note desktop.g.resources
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\Note desktop.AssemblyInfoInputs.cache
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\Note desktop.AssemblyInfo.cs
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\Note desktop.csproj.CoreCompileInputs.cache
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\Note desktop.dll
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\Note desktop.pdb
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\Note desktop.genruntimeconfig.cache
+D:\code\Note desktop\Note desktop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\code\Note desktop\Note desktop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\code\Note desktop\Note desktop\bin\Debug\netcoreapp3.1\Microsoft.Toolkit.Mvvm.dll
+D:\code\Note desktop\Note desktop\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+D:\code\Note desktop\Note desktop\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\View\MainWindow.g.cs
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\View\NoteView.g.cs
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\View\MainWindow.baml
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\View\NoteView.baml
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\Note desktop.csproj.CopyComplete
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\App.baml
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+D:\code\Note desktop\Note desktop\bin\Debug\netcoreapp3.1\Microsoft.Expression.Interactions.dll
+D:\code\Note desktop\Note desktop\bin\Debug\netcoreapp3.1\System.Windows.Interactivity.dll
+D:\code\Note desktop\Note desktop\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
