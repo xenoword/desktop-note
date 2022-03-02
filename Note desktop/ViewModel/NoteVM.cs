@@ -17,6 +17,7 @@ namespace Note_desktop.ViewModel
     {
         private List<Note> saveNoteList;
         private ObservableCollection<Note> noteList;
+        
         public ObservableCollection<Note> NoteList
         {
             get => noteList;
@@ -35,7 +36,51 @@ namespace Note_desktop.ViewModel
             BtnAdd = new RelayCommand(AddNote);
             BtnToggleReduce = new RelayCommand(ToogleReduce);
             BtnRemove = new RelayCommand<NoteView>(RemoveNote);
-    }
+            ActDragWindow = new RelayCommand<Window>(DragWindow);
+        }
+
+        #region Drag Window
+        private double windowMaxHeight;
+        private double windowTop;
+        private double windowLeft;
+
+        public double WindowMaxHeight 
+        { 
+            get => windowMaxHeight;
+            set
+            {
+                windowMaxHeight = value;
+                OnPropertyChanged(nameof(WindowMaxHeight));
+            }
+        }
+        public double WindowTop 
+        {
+            get => windowTop;
+            set
+            {
+                windowTop = value;
+                OnPropertyChanged(nameof(WindowTop));
+            }
+        }
+        public double WindowLeft 
+        { 
+            get => windowLeft;
+            set
+            {
+                windowLeft = value;
+                OnPropertyChanged(nameof(WindowLeft));
+            }
+        }
+
+        public IRelayCommand ActDragWindow { get; }
+
+        private void DragWindow(Window window)
+        {
+            MessageBox.Show("over");
+            window.DragMove();
+        }
+
+        #endregion
 
         #region Save File
         public void SaveNoteList()
@@ -99,6 +144,7 @@ namespace Note_desktop.ViewModel
 
         #region Close Window
         public IRelayCommand BtnClose { get; }
+
         private void CloseWindow(Window window)
         {
             SaveNoteList();
