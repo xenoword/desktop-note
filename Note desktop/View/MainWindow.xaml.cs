@@ -21,7 +21,32 @@ namespace Note_desktop.View
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = ((App)App.Current).NoteVM;
+            DataContext = ((App)Application.Current).NoteVM;
+        }
+
+        #region WindowUpdate
+
+        private bool CanMove => Mouse.LeftButton == MouseButtonState.Pressed;
+        private bool CanResize { get; set; }
+        private bool IsOverMainGrid => MainGrid.IsMouseOver && !NoteListView.IsMouseOver && !BtnAdd.IsMouseOver && !BtnClose.IsMouseOver && !BtnReduce.IsMouseOver;
+
+        private void this_LocationChanged(object sender, EventArgs e)
+        {
+            if (Top > SystemParameters.PrimaryScreenHeight - MinHeight - 20)
+            {
+                Top = SystemParameters.PrimaryScreenHeight - MinHeight - 20;
+            }
+            MaxHeight = SystemParameters.PrimaryScreenHeight - Top - 10;
+        }
+
+        #endregion
+
+        private void MainGrid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (CanMove && IsOverMainGrid)
+            {
+                DragMove();
+            }
         }
     }
 }

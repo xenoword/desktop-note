@@ -34,53 +34,9 @@ namespace Note_desktop.ViewModel
 
             BtnClose = new RelayCommand<Window>(CloseWindow);
             BtnAdd = new RelayCommand(AddNote);
-            BtnToggleReduce = new RelayCommand(ToogleReduce);
+            BtnToggleReduce = new RelayCommand<Window>(ToogleReduce);
             BtnRemove = new RelayCommand<NoteView>(RemoveNote);
-            ActDragWindow = new RelayCommand<Window>(DragWindow);
         }
-
-        #region Drag Window
-        private double windowMaxHeight;
-        private double windowTop;
-        private double windowLeft;
-
-        public double WindowMaxHeight 
-        { 
-            get => windowMaxHeight;
-            set
-            {
-                windowMaxHeight = value;
-                OnPropertyChanged(nameof(WindowMaxHeight));
-            }
-        }
-        public double WindowTop 
-        {
-            get => windowTop;
-            set
-            {
-                windowTop = value;
-                OnPropertyChanged(nameof(WindowTop));
-            }
-        }
-        public double WindowLeft 
-        { 
-            get => windowLeft;
-            set
-            {
-                windowLeft = value;
-                OnPropertyChanged(nameof(WindowLeft));
-            }
-        }
-
-        public IRelayCommand ActDragWindow { get; }
-
-        private void DragWindow(Window window)
-        {
-            MessageBox.Show("over");
-            window.DragMove();
-        }
-
-        #endregion
 
         #region Save File
         public void SaveNoteList()
@@ -110,20 +66,24 @@ namespace Note_desktop.ViewModel
         {
             saveNoteList.Remove((Note)noteView.DataContext);
             NoteList.Remove((Note)noteView.DataContext);
+            SaveNoteList();
         }
         #endregion
 
         #region Reduce Window
         public IRelayCommand BtnToggleReduce { get; }
-        public void ToogleReduce()
+        public void ToogleReduce(Window window)
         {
             if (NoteList.Count == 0)
             {
                 NoteList = new ObservableCollection<Note>(saveNoteList);
+                window.SizeToContent = SizeToContent.Height;
             }
             else
             {
                 NoteList = new ObservableCollection<Note>();
+                window.SizeToContent = SizeToContent.Manual;
+                window.Height = window.MinHeight;
             }
         }
         #endregion
@@ -139,6 +99,7 @@ namespace Note_desktop.ViewModel
             Note newNote = new Note();
             NoteList.Add(newNote);
             saveNoteList.Add(newNote);
+            SaveNoteList();
         }
         #endregion
 

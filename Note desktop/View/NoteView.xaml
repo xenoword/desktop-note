@@ -5,14 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Note_desktop.View"
              mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="280" MinHeight="100" Width="280" x:Name="this">
+             d:DesignHeight="150" d:DesignWidth="280" MinHeight="100" MinWidth="280" x:Name="this">
     <Border CornerRadius="5" BorderThickness="5" BorderBrush="{StaticResource Secondary}" Background="{StaticResource Tertiary}" Margin="5">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Style="{DynamicResource RoundButton}" Content="-" Grid.Row="0" HorizontalAlignment="Right" Margin="0" Command="{Binding BtnRemove}" CommandParameter="{Binding ElementName=this}" DataContext="{ Binding DataContext, RelativeSource={RelativeSource AncestorType=local:MainWindow}}"/>
+            <Button Style="{DynamicResource RoundButton}" Content="-" Grid.Row="0" HorizontalAlignment="Right" Margin="0" Command="{Binding BtnRemove}" CommandParameter="{Binding ElementName=this}" DataContext="{Binding DataContext, RelativeSource={RelativeSource AncestorType=local:MainWindow}}"/>
             <TextBox Grid.Row="0" Text="{Binding Title, Mode=TwoWay}" FontSize="18" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Left" Width="185" Background="Transparent" BorderThickness="0"/>
             <TextBox Grid.Row="1" Text="{Binding Text, Mode=TwoWay}" FontSize="16" TextWrapping="Wrap" FontWeight="SemiBold" AcceptsReturn="True" Background="Transparent" BorderThickness="0"/>
         </Grid>

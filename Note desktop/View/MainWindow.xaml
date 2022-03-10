@@ -6,18 +6,20 @@
         xmlns:local="clr-namespace:Note_desktop.View"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="50" MaxHeight="820" MinWidth="310" Width="310" ResizeMode="NoResize" ShowInTaskbar="False" ShowActivated="True" WindowStyle="None" AllowsTransparency="True" Topmost="True" WindowStartupLocation="Manual" Left="10" Top="10" Background="Transparent" SizeToContent="Height" x:Name="this" >
-    <Border CornerRadius="10" Background="{StaticResource Secondary}" BorderThickness="10" BorderBrush="{StaticResource Primary}">
-        <Grid>
+        Title="MainWindow" MinHeight="50" MaxHeight="820" MinWidth="310" Width="310" ResizeMode="CanResizeWithGrip" ShowInTaskbar="False" ShowActivated="True" WindowStyle="None" AllowsTransparency="True" Topmost="True" WindowStartupLocation="Manual" Left="10" Top="10" Background="Transparent" SizeToContent="Height" x:Name="this" LocationChanged="this_LocationChanged">
+    <Border x:Name="MainBorder" CornerRadius="10" BorderThickness="10" BorderBrush="{StaticResource Primary}">
+
+        <Grid x:Name="MainGrid" Background="{StaticResource Secondary}" Cursor="SizeAll" MouseDown="MainGrid_MouseDown">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Style="{DynamicResource RoundButton}" Content="x" Grid.RowSpan="1" HorizontalAlignment="Right" Margin="0,0,20,0" Command="{Binding BtnClose}" CommandParameter="{Binding ElementName=this}" />
-            <Button Style="{DynamicResource RoundButton}" Content="+" Grid.RowSpan="1" HorizontalAlignment="Left" Margin="20,0,0,0" Command="{Binding BtnAdd}" />
-            <Button Style="{DynamicResource RoundButton}" Content="-" Grid.RowSpan="1" HorizontalAlignment="Right" Margin="0,0,45,0" Command="{Binding BtnToggleReduce}" />
 
-            <ListView Grid.Row="2" Background="Transparent" ScrollViewer.VerticalScrollBarVisibility="Hidden" BorderThickness="0" ItemsSource="{Binding NoteList, Mode=TwoWay}">
+            <Button x:Name="BtnClose" Style="{DynamicResource RoundButton}" Content="x" Grid.RowSpan="1" HorizontalAlignment="Right" Margin="0,0,20,0" Command="{Binding BtnClose}" CommandParameter="{Binding ElementName=this}" />
+            <Button x:Name="BtnAdd" Style="{DynamicResource RoundButton}" Content="+" Grid.RowSpan="1" HorizontalAlignment="Left" Margin="20,0,0,0" Command="{Binding BtnAdd}" />
+            <Button x:Name="BtnReduce" Style="{DynamicResource RoundButton}" Content="-" Grid.RowSpan="1" HorizontalAlignment="Right" Margin="0,0,45,0" Command="{Binding BtnToggleReduce}" CommandParameter="{Binding ElementName=this}" />
+
+            <ListView x:Name="NoteListView" Grid.Row="2" Background="Transparent" ScrollViewer.VerticalScrollBarVisibility="Hidden" BorderThickness="0" ItemsSource="{Binding NoteList, Mode=TwoWay}" Cursor="Arrow" MinHeight="0">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="{x:Type ListViewItem}">
                         <Setter Property="Background" Value="Transparent"/>
