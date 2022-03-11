@@ -39,8 +39,6 @@ namespace Note_desktop.View
             MaxHeight = SystemParameters.PrimaryScreenHeight - Top - 10;
         }
 
-        #endregion
-
         private void MainGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (CanMove && IsOverMainGrid)
@@ -48,5 +46,7 @@ namespace Note_desktop.View
                 DragMove();
             }
         }
+        #endregion
+
     }
 }

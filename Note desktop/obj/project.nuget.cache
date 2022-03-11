@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LgNiV/pWmwnuFq4ey5K8ScX+8ZfQotig4vHN06f2hkFHao0gR/OdcmFWqOqhMpgMyUwOppFoDaRGAGtkoHtjqQ==",
+  "dgSpecHash": "7tTU2diu9iRgu1mQlIkhZ66mh24xXPKZyUjRjXB7GhKEt/Bf74PYO1flKFVyyHwa0aF17fiP3IKCHtTZYY1Ihw==",
   "success": true,
-  "projectFilePath": "D:\\code\\Note desktop\\Note desktop\\Note desktop.csproj",
+  "projectFilePath": "P:\\autre\\desktop-note\\Note desktop\\Note desktop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\morti\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\morti\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Note_desktop.View"
              mc:Ignorable="d" 
              d:DesignHeight="150" d:DesignWidth="280" MinHeight="100" MinWidth="280" x:Name="this">
-    <Border CornerRadius="5" BorderThickness="5" BorderBrush="{StaticResource Secondary}" Background="{StaticResource Tertiary}" Margin="5">
+    <Border CornerRadius="5" BorderThickness="5" BorderBrush="{StaticResource Secondary}" Background="{StaticResource Tertiary}" Margin="5,5,10,5">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>

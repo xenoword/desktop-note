@@ -1,19 +1,19 @@
 ﻿Note desktop
-1.0.0.0
+
 
 winexe
 C#
 .cs
-P:\autre\desktop-note\Note desktop\obj\Debug\netcoreapp3.1\
+P:\autre\desktop-note\Note desktop\obj\Release\netcoreapp3.1\
 Note_desktop
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1;
 P:\autre\desktop-note\Note desktop\App.xaml
-21219534156
+2-1464440776
 
-8-1023425408
-1921654412462
+6-60699341
+198-1385170053
 View\MainWindow.xaml;View\NoteView.xaml;
 
 True

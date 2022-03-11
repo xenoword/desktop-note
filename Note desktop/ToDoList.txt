@@ -1,4 +1,5 @@
 ﻿afficher une barre de scroll
+se bloque qd full screen
 choisir une couleur pour le fond de la note(genre pour l'importance logo parametre pour personaliser la note)
 réordonner les notes
 faire plusieurs catégorie (1 fichier par catégorie genre chevron vers le bas)

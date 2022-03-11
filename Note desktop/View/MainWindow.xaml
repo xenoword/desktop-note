@@ -19,7 +19,7 @@
             <Button x:Name="BtnAdd" Style="{DynamicResource RoundButton}" Content="+" Grid.RowSpan="1" HorizontalAlignment="Left" Margin="20,0,0,0" Command="{Binding BtnAdd}" />
             <Button x:Name="BtnReduce" Style="{DynamicResource RoundButton}" Content="-" Grid.RowSpan="1" HorizontalAlignment="Right" Margin="0,0,45,0" Command="{Binding BtnToggleReduce}" CommandParameter="{Binding ElementName=this}" />
 
-            <ListView x:Name="NoteListView" Grid.Row="2" Background="Transparent" ScrollViewer.VerticalScrollBarVisibility="Hidden" BorderThickness="0" ItemsSource="{Binding NoteList, Mode=TwoWay}" Cursor="Arrow" MinHeight="0">
+            <ListView x:Name="NoteListView" Grid.Row="2" Background="Transparent" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Hidden" BorderThickness="0" ItemsSource="{Binding NoteList, Mode=TwoWay}" Cursor="Arrow" MinHeight="0">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="{x:Type ListViewItem}">
                         <Setter Property="Background" Value="Transparent"/>
@@ -38,9 +38,44 @@
                         <local:NoteView/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
+                <ListView.Template>
+                    <ControlTemplate>
+                        <ScrollViewer>
+                            <ScrollViewer.Resources>
+                                <Style TargetType="ScrollBar">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ScrollBar}">
+                                                <Grid x:Name="Bg" SnapsToDevicePixels="true" Margin="0,0,3,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition MaxHeight="10"/>
+                                                        <RowDefinition Height="0.00001*"/>
+                                                        <RowDefinition MaxHeight="10"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Track x:Name="PART_Track" IsDirectionReversed="true" IsEnabled="{TemplateBinding IsMouseOver}" Grid.Row="1">
+                                                        <Track.DecreaseRepeatButton>
+                                                            <RepeatButton Command="{x:Static ScrollBar.PageUpCommand}" Style="{StaticResource RepeatButtonTransparent}" HorizontalAlignment="Left" Width="17"/>
+                                                        </Track.DecreaseRepeatButton>
+                                                        <Track.IncreaseRepeatButton>
+                                                            <RepeatButton Command="{x:Static ScrollBar.PageDownCommand}" Style="{StaticResource RepeatButtonTransparent}"/>
+                                                        </Track.IncreaseRepeatButton>
+                                                        <Track.Thumb>
+                                                            <Thumb Style="{StaticResource ScrollBarThumbVertical}" Margin="2"/>
+                                                        </Track.Thumb>
+                                                    </Track>
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ScrollViewer.Resources>
+                            <ItemsPresenter/>
+                        </ScrollViewer>
+                    </ControlTemplate>
+                </ListView.Template>
             </ListView>
-
-
         </Grid>
     </Border>
 </Window>
