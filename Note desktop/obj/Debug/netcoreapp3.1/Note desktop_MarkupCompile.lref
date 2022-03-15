@@ -1,5 +1,8 @@
-﻿P:\autre\desktop-note\Note desktop\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
-FP:\autre\desktop-note\Note desktop\App.xaml;;
-FP:\autre\desktop-note\Note desktop\View\MainWindow.xaml;;
-FP:\autre\desktop-note\Note desktop\View\NoteView.xaml;;
+﻿
+FD:\code\Note desktop\Note desktop\App.xaml;;
+FD:\code\Note desktop\Note desktop\ResourceDictionaries\Button.xaml;;
+FD:\code\Note desktop\Note desktop\ResourceDictionaries\Color.xaml;;
+FD:\code\Note desktop\Note desktop\ResourceDictionaries\ScrollViewer.xaml;;
+FD:\code\Note desktop\Note desktop\View\MainWindow.xaml;;
+FD:\code\Note desktop\Note desktop\View\NoteView.xaml;;
 

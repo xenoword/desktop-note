@@ -71,7 +71,7 @@
                                     </Setter>
                                 </Style>
                             </ScrollViewer.Resources>
-                            <ItemsPresenter/>
+                            <ItemsPresenter />
                         </ScrollViewer>
                     </ControlTemplate>
                 </ListView.Template>

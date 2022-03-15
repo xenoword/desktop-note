@@ -61,7 +61,7 @@ namespace Note_desktop.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Note desktop;V1.0.0.0;component/view/noteview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Note desktop;component/view/noteview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\NoteView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

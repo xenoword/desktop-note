@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Note_desktop.ResourceDictionaries">
+    <SolidColorBrush x:Key="Primary">#FF404040</SolidColorBrush>
+    <SolidColorBrush x:Key="Secondary">#FF353535</SolidColorBrush>
+    <SolidColorBrush x:Key="Tertiary">#FF303030</SolidColorBrush>
+    <SolidColorBrush x:Key="Quaternary">#FF202020</SolidColorBrush>
+    <SolidColorBrush x:Key="Quinternary">#FF151515</SolidColorBrush>
+</ResourceDictionary>

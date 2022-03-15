@@ -336,11 +336,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "P:\\autre\\desktop-note\\Note desktop\\Note desktop.csproj",
+      "projectUniqueName": "D:\\code\\Note desktop\\Note desktop\\Note desktop.csproj",
       "projectName": "Note desktop",
-      "projectPath": "P:\\autre\\desktop-note\\Note desktop\\Note desktop.csproj",
+      "projectPath": "D:\\code\\Note desktop\\Note desktop\\Note desktop.csproj",
       "packagesPath": "C:\\Users\\morti\\.nuget\\packages\\",
-      "outputPath": "P:\\autre\\desktop-note\\Note desktop\\obj\\",
+      "outputPath": "D:\\code\\Note desktop\\Note desktop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

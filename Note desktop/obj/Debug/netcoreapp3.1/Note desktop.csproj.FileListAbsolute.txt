@@ -62,3 +62,6 @@ P:\autre\desktop-note\Note desktop\obj\Debug\netcoreapp3.1\Note desktop.csproj.C
 P:\autre\desktop-note\Note desktop\obj\Debug\netcoreapp3.1\Note desktop.dll
 P:\autre\desktop-note\Note desktop\obj\Debug\netcoreapp3.1\Note desktop.pdb
 P:\autre\desktop-note\Note desktop\obj\Debug\netcoreapp3.1\Note desktop.genruntimeconfig.cache
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\ResourceDictionaries\Button.baml
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\ResourceDictionaries\Color.baml
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\ResourceDictionaries\ScrollViewer.baml

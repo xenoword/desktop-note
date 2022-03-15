@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-P:\autre\desktop-note\Note desktop\obj\Debug\netcoreapp3.1\
+D:\code\Note desktop\Note desktop\obj\Debug\netcoreapp3.1\
 Note_desktop
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-P:\autre\desktop-note\Note desktop\App.xaml
-21219534156
+D:\code\Note desktop\Note desktop\App.xaml
+51369946003
 
 8-1023425408
-1921654412462
-View\MainWindow.xaml;View\NoteView.xaml;
+198449307285
+ResourceDictionaries\Button.xaml;ResourceDictionaries\Color.xaml;ResourceDictionaries\ScrollViewer.xaml;View\MainWindow.xaml;View\NoteView.xaml;
 
-True
+False
 

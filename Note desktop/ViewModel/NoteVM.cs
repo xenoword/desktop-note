@@ -9,6 +9,7 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Note_desktop.ViewModel
@@ -17,7 +18,8 @@ namespace Note_desktop.ViewModel
     {
         private List<Note> saveNoteList;
         private ObservableCollection<Note> noteList;
-        
+        private double actualMaxHeight;
+
         public ObservableCollection<Note> NoteList
         {
             get => noteList;
@@ -77,13 +79,15 @@ namespace Note_desktop.ViewModel
             if (NoteList.Count == 0)
             {
                 NoteList = new ObservableCollection<Note>(saveNoteList);
-                window.SizeToContent = SizeToContent.Height;
+                window.MaxHeight = SystemParameters.PrimaryScreenHeight - window.Top - 10; ;
+                //window.SizeToContent = SizeToContent.Height;
             }
             else
             {
                 NoteList = new ObservableCollection<Note>();
-                window.SizeToContent = SizeToContent.Manual;
-                window.Height = window.MinHeight;
+                window.MaxHeight = 20;
+                //window.SizeToContent = SizeToContent.Manual;
+                //window.Height = window.MinHeight;
             }
         }
         #endregion
