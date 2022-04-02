@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 D:\code\Note desktop\Note desktop\App.xaml
-51369946003
+61967029162
 
 8-1023425408
 198449307285
-ResourceDictionaries\Button.xaml;ResourceDictionaries\Color.xaml;ResourceDictionaries\ScrollViewer.xaml;View\MainWindow.xaml;View\NoteView.xaml;
+ResourceDictionaries\Button.xaml;ResourceDictionaries\Color.xaml;ResourceDictionaries\ScrollViewer.xaml;ResourceDictionaries\Window.xaml;View\MainWindow.xaml;View\NoteView.xaml;
 
-False
+True
 
