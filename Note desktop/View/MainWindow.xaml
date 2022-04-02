@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Note_desktop.View"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
-        Title="MainWindow" MaxHeight="820" MinWidth="310" Width="310" ResizeMode="CanResizeWithGrip" ShowInTaskbar="False" ShowActivated="True" WindowStyle="None" AllowsTransparency="True" Topmost="True" WindowStartupLocation="Manual" Left="10" Top="10" Background="Transparent" SizeToContent="Height" x:Name="this" LocationChanged="this_LocationChanged" StateChanged="this_StateChanged" >
+        Title="MainWindow" ResizeMode="CanResizeWithGrip" ShowInTaskbar="False" ShowActivated="True" WindowStyle="None" AllowsTransparency="True" Topmost="True" WindowStartupLocation="Manual" Left="10" Top="10" Background="Transparent" SizeToContent="Height" x:Name="this" LocationChanged="this_LocationChanged" StateChanged="this_StateChanged" Style="{DynamicResource RoundedWindow}">
     
     <Grid x:Name="MainGrid" Background="{StaticResource Secondary}" Cursor="SizeAll" MouseDown="MainGrid_MouseDown">
         <Grid.RowDefinitions>

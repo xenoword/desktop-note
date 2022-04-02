@@ -9,6 +9,7 @@
                 <ResourceDictionary Source="ResourceDictionaries/Button.xaml"/>
                 <ResourceDictionary Source="ResourceDictionaries/ScrollViewer.xaml"/>
                 <ResourceDictionary Source="ResourceDictionaries/Color.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/Window.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
