@@ -28,7 +28,7 @@ namespace Note_desktop.View
 
         private bool CanMove => Mouse.LeftButton == MouseButtonState.Pressed;
         private bool CanResize { get; set; }
-        private bool IsOverMainGrid => MainGrid.IsMouseOver && !NoteListView.IsMouseOver && !BtnAdd.IsMouseOver && !BtnClose.IsMouseOver && !BtnReduce.IsMouseOver;
+        private bool IsOverMainGrid => MainGrid.IsMouseOver && !NoteListView.IsMouseOver && !BtnAdd.IsMouseOver && !BtnClose.IsMouseOver;// && !BtnReduce.IsMouseOver;
 
         private void this_LocationChanged(object sender, EventArgs e)
         {
@@ -48,5 +48,9 @@ namespace Note_desktop.View
         }
         #endregion
 
+        private void this_StateChanged(object sender, EventArgs e)
+        {
+            this.WindowState = WindowState.Normal;
+        }
     }
 }

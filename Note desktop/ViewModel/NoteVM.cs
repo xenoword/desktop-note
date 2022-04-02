@@ -18,7 +18,6 @@ namespace Note_desktop.ViewModel
     {
         private List<Note> saveNoteList;
         private ObservableCollection<Note> noteList;
-        private double actualMaxHeight;
 
         public ObservableCollection<Note> NoteList
         {
@@ -36,7 +35,7 @@ namespace Note_desktop.ViewModel
 
             BtnClose = new RelayCommand<Window>(CloseWindow);
             BtnAdd = new RelayCommand(AddNote);
-            BtnToggleReduce = new RelayCommand<Window>(ToogleReduce);
+            //BtnToggleReduce = new RelayCommand<Window>(ToogleReduce);
             BtnRemove = new RelayCommand<NoteView>(RemoveNote);
         }
 
@@ -73,23 +72,20 @@ namespace Note_desktop.ViewModel
         #endregion
 
         #region Reduce Window
-        public IRelayCommand BtnToggleReduce { get; }
-        public void ToogleReduce(Window window)
-        {
-            if (NoteList.Count == 0)
-            {
-                NoteList = new ObservableCollection<Note>(saveNoteList);
-                window.MaxHeight = SystemParameters.PrimaryScreenHeight - window.Top - 10; ;
-                //window.SizeToContent = SizeToContent.Height;
-            }
-            else
-            {
-                NoteList = new ObservableCollection<Note>();
-                window.MaxHeight = 20;
-                //window.SizeToContent = SizeToContent.Manual;
-                //window.Height = window.MinHeight;
-            }
-        }
+        //public IRelayCommand BtnToggleReduce { get; }
+        //public void ToogleReduce(Window window)
+        //{
+        //    if (NoteList.Count == 0)
+        //    {
+        //        NoteList = new ObservableCollection<Note>(saveNoteList);
+        //        window.MaxHeight = SystemParameters.PrimaryScreenHeight - window.Top - 10;
+        //    }
+        //    else
+        //    {
+        //        NoteList = new ObservableCollection<Note>();
+        //        window.MaxHeight = 20;
+        //    }
+        //}
         #endregion
 
         #region Add Note

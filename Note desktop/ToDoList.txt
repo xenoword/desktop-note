@@ -1,4 +1,4 @@
-﻿si resize impossible de dérouler le menu (le contenue est dans le scrollviewer donc il ne le fait pas grandir (changer le code C# avec un saveMaxHeignt et toute les conditions + passer le OnMove dans le VM))
+﻿si resize impossible de dérouler le menu (le contenue est dans le scrollviewer donc il ne le fait pas grandir (changer le code C# avec un saveMaxHeignt et toute les conditions + passer le OnMove dans le VM)) retirer pcq on peut juste resize
 se bloque qd full screen
 choisir une couleur pour le fond de la note(genre pour l'importance logo parametre pour personaliser la note)
 réordonner les notes
