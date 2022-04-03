@@ -6,16 +6,20 @@
         <Setter Property="MaxHeight" Value="820"/>
         <Setter Property="MinWidth" Value="310"/>
         <Setter Property="Width" Value="310"/>
-        <Setter Property="MinHeight" Value="50"/>
-        <Setter Property="Template">
+        <Setter Property="ShowInTaskbar" Value="False"/>
+        <Setter Property="ShowActivated" Value="True"/>
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="AllowsTransparency" Value="True"/>
+        <Setter Property="Topmost" Value="True"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="SizeToContent" Value="Height"/>
+        <!--<Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Window}">
-                    <Border x:Name="MainBorder" CornerRadius="10" BorderThickness="10" BorderBrush="{StaticResource Primary}">
-                        <ContentPresenter Height="Auto"/>
-                    </Border>
-                </ControlTemplate>
+                
             </Setter.Value>
-        </Setter>
+        </Setter>-->
     </Style>
+    
+    
 
 </ResourceDictionary>
