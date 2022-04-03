@@ -20,6 +20,7 @@
                             <RowDefinition Height="30"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
+                        
                         <Grid x:Name="sp" Grid.Row="0" Loaded="header_Loaded" Background="Transparent" Cursor="SizeAll">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -27,53 +28,20 @@
                             </Grid.ColumnDefinitions>
                             <Button x:Name="BtnAdd" Style="{DynamicResource RoundButton}" Content="+" Grid.Column="0" HorizontalAlignment="Left" Margin="5,2" Command="{Binding BtnAdd}" />
                             <Button x:Name="BtnClose" Style="{DynamicResource RoundButton}" Content="x" Grid.Column="1" HorizontalAlignment="Right" Margin="5,2" Command="{Binding BtnClose}" CommandParameter="{Binding ElementName=this}" />
+                            <Button x:Name="BtnReduce" Style="{DynamicResource RoundButton}" Content="-" Grid.Column="1" HorizontalAlignment="Right" Margin="5,2,35,2" Click="ToogleReduce" />
                         </Grid>
+                        
                         <ContentPresenter Grid.Row="1"/>
                     </Grid>
                 </Border>
             </Border>
-
-
-
-
-            <!--<Border x:Name="MainBorder" CornerRadius="10" BorderThickness="10" BorderBrush="{StaticResource Primary}" Background="{StaticResource Secondary}">
-                <Border.Effect>
-                    <DropShadowEffect BlurRadius="10" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="#FF404040"/>
-                </Border.Effect>
-
-                <Grid Margin="10" x:Name="MainGrid">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid Cursor="SizeAll" Loaded="header_Loaded">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="0"/>
-                        </Grid.ColumnDefinitions>
-                        <Button x:Name="BtnClose" Style="{DynamicResource RoundButton}" Content="x" Grid.RowSpan="1" HorizontalAlignment="Right" Command="{Binding BtnClose}" CommandParameter="{Binding ElementName=this}" />
-                        <Button x:Name="BtnAdd" Style="{DynamicResource RoundButton}" Content="+" Grid.RowSpan="1" HorizontalAlignment="Left"  Command="{Binding BtnAdd}" />
-                        <Button x:Name="BtnReduce" Style="{DynamicResource RoundButton}" Content="-" Grid.RowSpan="1" HorizontalAlignment="Right" Margin="0,0,45,0" Command="{Binding BtnToggleReduce}" CommandParameter="{Binding ElementName=this}" />
-                    </Grid>
-                    <ContentPresenter Grid.Row="1" Height="Auto"/>
-                </Grid>
-            </Border>-->
         </ControlTemplate>
     </Window.Template>
-    
-    
-    
-    
-    
-    <!--<Grid x:Name="MainGrid" Background="{StaticResource Secondary}" Cursor="SizeAll" MouseDown="MainGrid_MouseDown">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <Button x:Name="BtnClose" Style="{DynamicResource RoundButton}" Content="x" Grid.RowSpan="1" HorizontalAlignment="Right" Margin="0,0,20,0" Command="{Binding BtnClose}" CommandParameter="{Binding ElementName=this}" />
-        <Button x:Name="BtnAdd" Style="{DynamicResource RoundButton}" Content="+" Grid.RowSpan="1" HorizontalAlignment="Left" Margin="20,0,0,0" Command="{Binding BtnAdd}" />-->
-
+    <WindowChrome.WindowChrome>
+        <WindowChrome 
+        CaptionHeight="2"
+        ResizeBorderThickness="5" />
+    </WindowChrome.WindowChrome>
 
     <ListView x:Name="NoteListView" Grid.Row="2" Background="Transparent" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Hidden" BorderThickness="0" ItemsSource="{Binding NoteList, Mode=TwoWay}" Cursor="Arrow" MinHeight="0">
             <ListView.ItemContainerStyle>
@@ -132,5 +100,5 @@
                 </ControlTemplate>
             </ListView.Template>
         </ListView>
-    <!--</Grid>-->
+
 </Window>

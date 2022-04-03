@@ -15,7 +15,7 @@
         <Setter Property="SizeToContent" Value="Height"/>
         <Setter Property="Top" Value="10"/>
         <Setter Property="Left" Value="10"/>
-        <Setter Property="ResizeMode" Value="CanResizeWithGrip"/>
+        <Setter Property="ResizeMode" Value="CanResize"/>
     </Style>
     
     

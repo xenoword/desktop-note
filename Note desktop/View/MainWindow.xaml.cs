@@ -21,6 +21,7 @@ namespace Note_desktop.View
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Screen ActualScreen { get => Screen.FromHandle(new WindowInteropHelper(this).Handle); }
 
         public MainWindow()
         {
@@ -32,14 +33,19 @@ namespace Note_desktop.View
 
         private void this_LocationChanged(object sender, EventArgs e)
         {
-            Screen actualScreen = Screen.FromHandle(new WindowInteropHelper(this).Handle);
-            Top = Top > actualScreen.Bounds.Bottom - MinHeight - 20 ? Top = actualScreen.Bounds.Bottom - MinHeight - 20 : Top;
-            MaxHeight = actualScreen.Bounds.Height - Top - actualScreen.Bounds.Height * 0.204;
+            Top = Top > ActualScreen.Bounds.Bottom - MinHeight - 20 ? Top = ActualScreen.Bounds.Bottom - MinHeight - 20 : Top;
+            MaxHeight = MaxHeight != MinHeight ? ActualScreen.Bounds.Height - Top - ActualScreen.Bounds.Height * 0.204 : MaxHeight;
         }
+        private void ToogleReduce(object sender, RoutedEventArgs e)
+        {
+            MaxHeight = MaxHeight == MinHeight ? ActualScreen.Bounds.Height - Top - ActualScreen.Bounds.Height * 0.204 : MinHeight;
+            SizeToContent = SizeToContent.Height;
+        }
+
 
         #endregion
 
-        #region drageable and fullscreen
+        #region dragable and fullscreen
         private void header_Loaded(object sender, RoutedEventArgs e)
         {
             InitHeader(sender as Grid);
