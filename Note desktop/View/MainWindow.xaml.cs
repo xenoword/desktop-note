@@ -6,10 +6,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Application = System.Windows.Application;
 
 namespace Note_desktop.View
 {
@@ -29,17 +32,14 @@ namespace Note_desktop.View
 
         private void this_LocationChanged(object sender, EventArgs e)
         {
-            //Top = Top > SystemParameters.PrimaryScreenHeight - MinHeight - 20 ? Top = SystemParameters.PrimaryScreenHeight - MinHeight - 20 : Top;
-            if (Top > SystemParameters.PrimaryScreenHeight - MinHeight - 20)
-            {
-                Top = SystemParameters.PrimaryScreenHeight - MinHeight - 20;
-            }
-            MaxHeight = SystemParameters.PrimaryScreenHeight - Top - 10;
+            Screen actualScreen = Screen.FromHandle(new WindowInteropHelper(this).Handle);
+            Top = Top > actualScreen.Bounds.Bottom - MinHeight - 20 ? Top = actualScreen.Bounds.Bottom - MinHeight - 20 : Top;
+            MaxHeight = actualScreen.Bounds.Height - Top - actualScreen.Bounds.Height * 0.204;
         }
 
         #endregion
 
-        #region Test
+        #region drageable and fullscreen
         private void header_Loaded(object sender, RoutedEventArgs e)
         {
             InitHeader(sender as Grid);
