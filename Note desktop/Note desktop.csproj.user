@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\EditNoteWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -24,7 +27,13 @@
     <Page Update="ResourceDictionaries\ScrollViewer.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="ResourceDictionaries\TextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ResourceDictionaries\Window.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\EditNoteWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainWindow.xaml">

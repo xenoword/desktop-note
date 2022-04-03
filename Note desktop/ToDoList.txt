@@ -1,4 +1,6 @@
-﻿choisir une couleur pour le fond de la note(genre pour l'importance logo parametre pour personaliser la note)
+﻿mettre le statupLocation de EditNoteWindow sur MainWindow
+corriger l'affichage des scrollbar
+choisir une couleur pour le fond de la note(genre pour l'importance logo parametre pour personaliser la note)
 réordonner les notes
 faire plusieurs catégorie (1 fichier par catégorie genre chevron vers le bas)
 TOUTES les couleurs personnalisables

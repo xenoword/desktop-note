@@ -16,9 +16,7 @@ namespace Note_desktop.ViewModel
 {
     public class NoteVM : ObservableObject
     {
-        private List<Note> saveNoteList;
         private ObservableCollection<Note> noteList;
-
         public ObservableCollection<Note> NoteList
         {
             get => noteList;
@@ -32,11 +30,23 @@ namespace Note_desktop.ViewModel
         public NoteVM()
         {
             LoadNoteList();
-
             BtnClose = new RelayCommand<Window>(CloseWindow);
             BtnAdd = new RelayCommand(AddNote);
             BtnRemove = new RelayCommand<NoteView>(RemoveNote);
+            BtnOpenEdit = new RelayCommand<NoteView>(OpenEditNote);
         }
+
+        #region Edit File
+        public IRelayCommand BtnOpenEdit { get; }
+
+        public Note NoteInEditing { get; set; }
+
+        public void OpenEditNote(NoteView noteView)
+        {
+            new EditNoteWindow(this).Show();
+            this.NoteInEditing = ((Note)noteView.DataContext);
+        }
+        #endregion
 
         #region Save File
         public void SaveNoteList()
@@ -49,13 +59,12 @@ namespace Note_desktop.ViewModel
             try
             {
                 string json = File.ReadAllText("main.json");
-                saveNoteList = JsonConvert.DeserializeObject<List<Note>>(json);
+                NoteList = JsonConvert.DeserializeObject<ObservableCollection<Note>>(json);
             }
             catch
             {
-                saveNoteList = new List<Note>();
+               NoteList = new ObservableCollection<Note>();
             }
-            NoteList = new ObservableCollection<Note>(saveNoteList);
         }
         #endregion
 
@@ -64,7 +73,6 @@ namespace Note_desktop.ViewModel
 
         public void RemoveNote(NoteView noteView)
         {
-            saveNoteList.Remove((Note)noteView.DataContext);
             NoteList.Remove((Note)noteView.DataContext);
             SaveNoteList();
         }
@@ -74,13 +82,8 @@ namespace Note_desktop.ViewModel
         public IRelayCommand BtnAdd { get; }
         public void AddNote()
         {
-            if (NoteList.Count == 0)
-            {
-                NoteList = new ObservableCollection<Note>(saveNoteList);
-            }
             Note newNote = new Note();
             NoteList.Add(newNote);
-            saveNoteList.Add(newNote);
             SaveNoteList();
         }
         #endregion

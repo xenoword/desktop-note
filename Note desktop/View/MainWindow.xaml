@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Note_desktop.View"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
-        Title="MainWindow" WindowStartupLocation="Manual" x:Name="this" LocationChanged="this_LocationChanged" Style="{DynamicResource RoundedWindow}">
+        Title="MainWindow" WindowStartupLocation="Manual" Top="10" Left="10" x:Name="this" LocationChanged="this_LocationChanged" Style="{DynamicResource RoundedWindow}">
     <Window.Template>
         <ControlTemplate TargetType="{x:Type Window}">
             <Border BorderBrush="Transparent"  BorderThickness="5" CornerRadius="10" Background="Transparent" >

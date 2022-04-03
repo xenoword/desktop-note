@@ -6,15 +6,16 @@
              xmlns:local="clr-namespace:Note_desktop.View"
              mc:Ignorable="d" 
              d:DesignHeight="150" d:DesignWidth="280" MinHeight="100" MinWidth="280" x:Name="this">
-    <Border CornerRadius="5" BorderThickness="5" BorderBrush="{StaticResource Secondary}" Background="{StaticResource Tertiary}" Margin="5,5,10,5">
+    <Border CornerRadius="5" BorderThickness="5" BorderBrush="{Binding BorderColor}" d:BorderBrush="{StaticResource Tertiary}" Background="{Binding BackgroundColor}" d:Background="{StaticResource Secondary}" Margin="5,5,10,5">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Button Style="{DynamicResource RoundButton}" Content="-" Grid.Row="0" HorizontalAlignment="Right" Margin="0" Command="{Binding BtnRemove}" CommandParameter="{Binding ElementName=this}" DataContext="{Binding DataContext, RelativeSource={RelativeSource AncestorType=local:MainWindow}}"/>
-            <TextBox Grid.Row="0" Text="{Binding Title, Mode=TwoWay}" FontSize="18" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Left" Width="185" Background="Transparent" BorderThickness="0"/>
-            <TextBox Grid.Row="1" Text="{Binding Text, Mode=TwoWay}" FontSize="16" TextWrapping="Wrap" FontWeight="SemiBold" AcceptsReturn="True" Background="Transparent" BorderThickness="0"/>
+            <Button Style="{DynamicResource RoundButton}" Content="⚙️" FontSize="12" Grid.Row="0" HorizontalAlignment="Right" Margin="0,3,20,0" Command="{Binding BtnOpenEdit}" CommandParameter="{Binding ElementName=this}" DataContext="{Binding DataContext, RelativeSource={RelativeSource AncestorType=local:MainWindow}}"/>
+            <TextBox Grid.Row="0" Text="{Binding Title, Mode=TwoWay}" HorizontalAlignment="Left" Width="185" Style="{StaticResource TitleTextBox}"/>
+            <TextBox Grid.Row="1" Text="{Binding Text, Mode=TwoWay}" Style="{StaticResource ContentTextBox}"/>
         </Grid>
     </Border>
 </UserControl>
