@@ -29,7 +29,7 @@ namespace Note_desktop
         {
             get { return Ioc.Default.GetService<NoteVM>(); }
         }
-        public EditingNoteVM EditedNoteVM
+        public EditingNoteVM EditingNoteVM
         {
             get { return Ioc.Default.GetService<EditingNoteVM>(); }
         }

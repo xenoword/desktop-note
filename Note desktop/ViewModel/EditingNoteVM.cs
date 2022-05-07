@@ -87,7 +87,7 @@ namespace Note_desktop.ViewModel
         public void SaveAndCloseEdition(Window window)
         {
             ((App)Application.Current).NoteVM.NoteList[Index] = EditingNote;
-
+            ((App)Application.Current).NoteVM.SaveNoteList();
             window.Close();
         }
 

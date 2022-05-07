@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Note_desktop.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,7 +21,11 @@ namespace Note_desktop.View
         public EditNoteWindow()
         {
             InitializeComponent();
-            DataContext = ((App)Application.Current).EditedNoteVM;
+            DataContext = ((App)Application.Current).EditingNoteVM;
+
+            //position au lancement
+            Top = ((MainWindow)Application.Current.MainWindow).Top + 30 + ((EditingNoteVM)DataContext).Index * 80;
+            Left = ((MainWindow)Application.Current.MainWindow).Left + 50;
         }
 
         #region dragable and fullscreen

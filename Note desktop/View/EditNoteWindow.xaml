@@ -65,7 +65,7 @@
     
         <TextBlock Grid.Row="2" Margin="0,0,0,0" FontWeight="Bold" FontSize="16" Text="Color :" />
         <TextBox  Grid.Row="2" Margin="50,0,30,0" Text="{Binding Color, Mode=TwoWay}" Style="{StaticResource ContentEditTextBox}" MaxLength="9"/>
-        <Border Grid.Row="2" x:Name="ColorShow" HorizontalAlignment="Right" Background="{Binding BackgroundColor, Mode=OneWay}" BorderBrush="black" CornerRadius="10" MinHeight="30" Width="30"/>
+        <Border Grid.Row="2" x:Name="ColorShow" HorizontalAlignment="Right" Background="{Binding BackgroundColor, Mode=OneWay}" BorderBrush="white" BorderThickness="3" CornerRadius="10" MinHeight="30" Width="30"/>
             
     </Grid>
     

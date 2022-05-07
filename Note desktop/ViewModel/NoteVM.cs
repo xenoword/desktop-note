@@ -43,7 +43,7 @@ namespace Note_desktop.ViewModel
 
         public void OpenEditNote(NoteView noteView)
         {
-            ((App)Application.Current).EditedNoteVM.Index = NoteList.IndexOf((Note)noteView.DataContext);
+            ((App)Application.Current).EditingNoteVM.Index = NoteList.IndexOf((Note)noteView.DataContext);
             new EditNoteWindow().Show();
         }
         #endregion
@@ -73,8 +73,12 @@ namespace Note_desktop.ViewModel
 
         public void RemoveNote(NoteView noteView)
         {
-            NoteList.Remove((Note)noteView.DataContext);
-            SaveNoteList();
+            MessageBoxResult result = MessageBox.Show(App.Current.MainWindow, "Supprimer la note \"" + ((Note)noteView.DataContext).Title + "\"?","Supprimer la note", MessageBoxButton.OKCancel);
+            if (result == MessageBoxResult.OK)
+            {
+                NoteList.Remove((Note)noteView.DataContext);
+                SaveNoteList();
+            }
         }
         #endregion
 
