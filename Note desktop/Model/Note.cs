@@ -10,6 +10,11 @@ namespace Note_desktop.View
 {
     public class Note
     {
+        private const byte MAX = 255;
+        private const byte MIN = 0;
+        private const byte DIFFCOLOR = 10;
+
+        private Color color;
         public Note()
             :this("Titre", "Contenu de la note")
         {
@@ -30,7 +35,18 @@ namespace Note_desktop.View
 
         public string Text { get; set; }
         public string Title { get; set; }
-        public Color Color { get; set; }
+        public Color Color 
+        {
+            get { return color; }
+            set 
+            {
+                color.A = MAX;
+                color.R = value.R < MAX - DIFFCOLOR ? value.R : (byte)(MAX - DIFFCOLOR);
+                color.G = value.G < MAX - DIFFCOLOR ? value.G : (byte)(MAX - DIFFCOLOR);
+                color.B = value.B < MAX - DIFFCOLOR ? value.B : (byte)(MAX - DIFFCOLOR);
+
+            } 
+        }
         public SolidColorBrush BackgroundColor
         {
             get
@@ -46,10 +62,10 @@ namespace Note_desktop.View
             {
                 SolidColorBrush brush = new SolidColorBrush();
                 Color color = new Color();
-                color.A = 255;
-                color.R = Convert.ToByte(Color.R + 5);
-                color.G = Convert.ToByte(Color.G + 5);
-                color.B = Convert.ToByte(Color.B + 5);
+                color.A = MAX;
+                color.R = Color.R > DIFFCOLOR ? (byte)(Color.R - DIFFCOLOR) : (byte)MIN;
+                color.G = Color.G > DIFFCOLOR ? (byte)(Color.G - DIFFCOLOR) : (byte)MIN;
+                color.B = Color.B > DIFFCOLOR ? (byte)(Color.B - DIFFCOLOR) : (byte)MIN;
                 brush.Color = color;
                 return brush;
             }

@@ -39,12 +39,9 @@ namespace Note_desktop.ViewModel
         #region Edit File
         public IRelayCommand BtnOpenEdit { get; }
 
-        public Note NoteInEditing { get; set; }
-
         public void OpenEditNote(NoteView noteView)
         {
-            new EditNoteWindow(this).Show();
-            this.NoteInEditing = ((Note)noteView.DataContext);
+            new EditNoteWindow(noteView.DataContext).Show();
         }
         #endregion
 

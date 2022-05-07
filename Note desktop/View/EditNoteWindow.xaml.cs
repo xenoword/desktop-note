@@ -110,5 +110,10 @@ namespace Note_desktop.View
         {
             this.Close();
         }
+
+        private void this_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

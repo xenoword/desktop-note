@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Note_desktop.View"
         mc:Ignorable="d"
-        Title="EditNoteWindow" x:Name="this" Style="{DynamicResource RoundedWindow}" MinWidth="310" MinHeight="200">
+        Title="EditNoteWindow"  x:Name="this" Style="{DynamicResource RoundedWindow}" MinWidth="310" MinHeight="200" Loaded="this_Loaded">
     <Window.Template>
         <ControlTemplate TargetType="{x:Type Window}">
             <Border BorderBrush="Transparent"  BorderThickness="5" CornerRadius="10" Background="Transparent" >
@@ -37,22 +37,26 @@
         </ControlTemplate>
     </Window.Template>
     <WindowChrome.WindowChrome>
-        <WindowChrome
-            CaptionHeight="0"
-            />
+        <WindowChrome CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
 
-    <Grid DataContext="{Binding NoteInEditing}" Margin="10">
+    <Grid Margin="10"><!--DataContext="{Binding NoteInEditing}"-->
         <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Margin="0,0,0,0" FontWeight="Bold" FontSize="16" Text="Titre :" />
-        <TextBox Grid.Row="0" Margin="50,0,0,0" Text="{Binding Title, Mode=TwoWay}" Style="{StaticResource ContentTextBox}"/>
+        <TextBox Grid.Row="0" Margin="50,0,0,0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" Text="{Binding Title, Mode=TwoWay}" Style="{StaticResource ContentTextBox}"/>
 
         <TextBlock Grid.Row="1" Margin="0,0,0,0" FontWeight="Bold" FontSize="16" Text="Contenu :" />
         <TextBox  Grid.Row="1" Margin="80,0,0,0" Text="{Binding Text, Mode=TwoWay}" Style="{StaticResource ContentTextBox}"/>
+    
+        <TextBlock Grid.Row="2" Margin="0,0,0,0" FontWeight="Bold" FontSize="16" Text="Color :" />
+        <TextBox  Grid.Row="2" Margin="50,0,0,0" Text="{Binding Color, Mode=TwoWay}" Style="{StaticResource ContentTextBox}"/>
+        
+        
     </Grid>
     
 </Window>
