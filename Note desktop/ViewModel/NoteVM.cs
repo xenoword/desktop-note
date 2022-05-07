@@ -2,6 +2,7 @@
 using Microsoft.Toolkit.Mvvm.Input;
 using Newtonsoft.Json;
 using Note_desktop.View;
+using Note_desktop.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -36,12 +37,14 @@ namespace Note_desktop.ViewModel
             BtnOpenEdit = new RelayCommand<NoteView>(OpenEditNote);
         }
 
+
         #region Edit File
         public IRelayCommand BtnOpenEdit { get; }
 
         public void OpenEditNote(NoteView noteView)
         {
-            new EditNoteWindow(noteView.DataContext).Show();
+            ((App)Application.Current).EditedNoteVM.Index = NoteList.IndexOf((Note)noteView.DataContext);
+            new EditNoteWindow().Show();
         }
         #endregion
 

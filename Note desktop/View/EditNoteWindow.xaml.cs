@@ -20,12 +20,7 @@ namespace Note_desktop.View
         public EditNoteWindow()
         {
             InitializeComponent();
-        }
-
-        public EditNoteWindow(object dataContext)
-            :this()
-        {
-            DataContext = dataContext;
+            DataContext = ((App)Application.Current).EditedNoteVM;
         }
 
         #region dragable and fullscreen

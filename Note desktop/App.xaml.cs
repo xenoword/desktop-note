@@ -21,6 +21,7 @@ namespace Note_desktop
             Ioc.Default.ConfigureServices(
                     new ServiceCollection()
                     .AddSingleton<NoteVM>()
+                    .AddSingleton<EditingNoteVM>()
                     .BuildServiceProvider());
 
         }
@@ -28,5 +29,10 @@ namespace Note_desktop
         {
             get { return Ioc.Default.GetService<NoteVM>(); }
         }
+        public EditingNoteVM EditedNoteVM
+        {
+            get { return Ioc.Default.GetService<EditingNoteVM>(); }
+        }
+
     }
 }

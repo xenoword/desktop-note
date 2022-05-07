@@ -3,4 +3,6 @@ corriger l'affichage des scrollbar
 choisir une couleur pour le fond de la note(genre pour l'importance logo parametre pour personaliser la note)
 réordonner les notes
 faire plusieurs catégorie (1 fichier par catégorie genre chevron vers le bas)
+ajouter un icone aux notes
+faire un color picker ?
 TOUTES les couleurs personnalisables

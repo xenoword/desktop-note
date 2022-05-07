@@ -39,8 +39,8 @@
     </Window.Template>
     <WindowChrome.WindowChrome>
         <WindowChrome 
-        CaptionHeight="2"
-        ResizeBorderThickness="5" />
+            CaptionHeight="2"
+            ResizeBorderThickness="5" />
     </WindowChrome.WindowChrome>
 
     <ListView x:Name="NoteListView" Grid.Row="2" Background="Transparent" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Hidden" BorderThickness="0" ItemsSource="{Binding NoteList, Mode=TwoWay}" Cursor="Arrow" MinHeight="0">

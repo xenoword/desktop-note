@@ -6,13 +6,14 @@ using System.Text;
 using System.Windows;
 using System.Windows.Media;
 
-namespace Note_desktop.View
+namespace Note_desktop.Model
 {
     public class Note
     {
         private const byte MAX = 255;
         private const byte MIN = 0;
         private const byte DIFFCOLOR = 10;
+        private static readonly Color DEFAULTCOLOR = ((SolidColorBrush)((App)Application.Current).Resources["Tertiary"]).Color;
 
         private Color color;
         public Note()
@@ -22,9 +23,9 @@ namespace Note_desktop.View
         }
 
         public Note(string title,string text)
-            :this(title, text, ((SolidColorBrush)((App)Application.Current).Resources["Tertiary"]).Color)
+            :this(title, text, DEFAULTCOLOR)
         {
-
+            
         }
         public Note(string title, string text, Color color)
         {
@@ -69,6 +70,11 @@ namespace Note_desktop.View
                 brush.Color = color;
                 return brush;
             }
+        }
+
+        public Note Clone()
+        {
+            return (Note)MemberwiseClone();
         }
 
         public override string ToString()

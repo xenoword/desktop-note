@@ -24,6 +24,9 @@
     <Page Update="ResourceDictionaries\Color.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="ResourceDictionaries\Rectangle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ResourceDictionaries\ScrollViewer.xaml">
       <SubType>Designer</SubType>
     </Page>
