@@ -38,13 +38,13 @@ namespace Note_desktop.ViewModel
         }
 
 
-        #region Edit File
+        #region Edit Note
         public IRelayCommand BtnOpenEdit { get; }
 
         public void OpenEditNote(NoteView noteView)
         {
             ((App)Application.Current).EditingNoteVM.Index = NoteList.IndexOf((Note)noteView.DataContext);
-            new EditNoteWindow().Show();
+            new EditNoteWindow().ShowDialog();
         }
         #endregion
 

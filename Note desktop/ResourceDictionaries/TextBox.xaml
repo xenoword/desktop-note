@@ -16,15 +16,16 @@
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="AcceptsReturn" Value="True"/>
-        <Setter Property="VerticalScrollBarVisibility" Value="Hidden"/>
     </Style>
 
     <Style TargetType="{x:Type TextBox}" x:Key="ContentEditTextBox">
+        <Setter Property="Margin" Value="0,5,0,5"/>
         <Setter Property="Background" Value="#1000"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
-        <Setter Property="VerticalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
+        <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
     </Style>
     
     

@@ -1,17 +1,18 @@
-﻿<Window x:Class="Note_desktop.View.EditNoteWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Note_desktop.View"
+        xmlns:ViewModel="clr-namespace:Note_desktop.ViewModel" x:Class="Note_desktop.View.EditNoteWindow"
         mc:Ignorable="d"
-        Title="EditNoteWindow" x:Name="this" Style="{DynamicResource RoundedWindow}" Loaded="this_Loaded">
+        Title="EditNoteWindow" x:Name="this" Style="{DynamicResource RoundedWindow}" MinHeight="320" MinWidth="300" WindowStartupLocation="CenterOwner" Loaded="this_Loaded">
     <Window.Template>
         <ControlTemplate TargetType="{x:Type Window}">
             <Border BorderBrush="Transparent"  BorderThickness="5" CornerRadius="10" Background="Transparent" >
-                <Border BorderBrush="{StaticResource Primary}" BorderThickness="4" CornerRadius="10" Name="MainBorder" Background="{StaticResource Secondary}" >
+                <Border BorderBrush="{StaticResource Primary}" BorderThickness="4" CornerRadius="10" x:Name="MainBorder" Background="{StaticResource Secondary}" >
                     <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="{Binding ElementName=MainBorder, Path=Background}"/>
+                        <DropShadowEffect BlurRadius="10" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="{Binding Background, ElementName=MainBorder}"/>
                     </Border.Effect>
 
                     <Grid Margin="0">
@@ -57,16 +58,24 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Margin="0,0,0,0" FontWeight="Bold" FontSize="16" Text="Titre :" />
-        <TextBox Grid.Row="0" Margin="50,0,0,0"  Text="{Binding Title, Mode=TwoWay}" Style="{StaticResource ContentEditTextBox}"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="1" Margin="0,0,0,0" FontWeight="Bold" FontSize="16" Text="Contenu :" />
-        <TextBox  Grid.Row="1" Margin="80,0,0,0" Text="{Binding Text, Mode=TwoWay}" Style="{StaticResource ContentEditTextBox}"/>
-    
-        <TextBlock Grid.Row="2" Margin="0,0,0,0" FontWeight="Bold" FontSize="16" Text="Color :" />
-        <TextBox  Grid.Row="2" Margin="50,0,30,0" Text="{Binding Color, Mode=TwoWay}" Style="{StaticResource ContentEditTextBox}" MaxLength="9"/>
-        <Border Grid.Row="2" x:Name="ColorShow" HorizontalAlignment="Right" Background="{Binding BackgroundColor, Mode=OneWay}" BorderBrush="white" BorderThickness="3" CornerRadius="10" MinHeight="30" Width="30"/>
-            
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Titre :" Style="{StaticResource TitleTextBlock}"/>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Le nom donné à la note" Style="{StaticResource HelpTextBlock}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Title, Mode=TwoWay}" Style="{StaticResource ContentEditTextBox}"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Contenu :" Style="{StaticResource TitleTextBlock}"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Le contenu" Style="{StaticResource HelpTextBlock}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Text, Mode=TwoWay}" Style="{StaticResource ContentEditTextBox}" TextWrapping="Wrap"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Color :" Style="{StaticResource TitleTextBlock}"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Couleur du fond (#AARRGGBB)" Style="{StaticResource HelpTextBlock}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Color, Mode=TwoWay}" Style="{StaticResource ContentEditTextBox}" Margin="0,0,30,0" MaxLength="9"/>
+        <Border Grid.Row="2" Grid.Column="1" x:Name="ColorShow" HorizontalAlignment="Right" Background="{Binding BackgroundColor, Mode=OneWay}" BorderBrush="white" BorderThickness="3" CornerRadius="10" MinHeight="30" Width="30"/>
+
     </Grid>
-    
+
 </Window>

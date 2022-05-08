@@ -24,8 +24,7 @@ namespace Note_desktop.View
             DataContext = ((App)Application.Current).EditingNoteVM;
 
             //position au lancement
-            Top = ((MainWindow)Application.Current.MainWindow).Top + 30 + ((EditingNoteVM)DataContext).Index * 80;
-            Left = ((MainWindow)Application.Current.MainWindow).Left + 50;
+            Owner = Application.Current.MainWindow;
         }
 
         #region dragable and fullscreen
