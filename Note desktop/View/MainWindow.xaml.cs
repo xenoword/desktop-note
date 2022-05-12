@@ -40,8 +40,14 @@ namespace Note_desktop.View
         {
             MaxHeight = MaxHeight == MinHeight ? ActualScreen.Bounds.Height - Top - ActualScreen.Bounds.Height * 0.204 : MinHeight;
             SizeToContent = SizeToContent.Height;
+            ((System.Windows.Controls.Button)Template.FindName("BtnReduce", this)).Content = ((System.Windows.Controls.Button)Template.FindName("BtnReduce", this)).Content.ToString() == "-" ? "+" : "-";
         }
-
+        private void Expand(object sender, RoutedEventArgs e)
+        {
+            MaxHeight = ActualScreen.Bounds.Height - Top - ActualScreen.Bounds.Height * 0.204;
+            SizeToContent = SizeToContent.Height;
+            ((System.Windows.Controls.Button)Template.FindName("BtnReduce", this)).Content = "-";
+        }
 
         #endregion
 
@@ -122,5 +128,10 @@ namespace Note_desktop.View
         }
 
         #endregion
+
+        private void Save(object sender, RoutedEventArgs e)
+        {
+            ((System.Windows.Controls.Button)Template.FindName("BtnSave", this)).Content = "💾";
+        }
     }
 }

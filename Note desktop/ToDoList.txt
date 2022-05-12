@@ -1,6 +1,9 @@
-﻿corriger l'affichage des scrollbar
+﻿sauvegarde avec vérif à la fermeture pour demande de confirmation + retirer auto save (voir pour faire auto save avec possible récupération si ancien != actuel à l'ouverture)
+modifier affichage si titre trop long (genre mettre ...)
 réordonner les notes
+corriger l'affichage des scrollbar
+améliorer affichage des icones (tous bien centré/aligné + couleur avec des images ou autre)
 faire plusieurs catégorie (1 fichier par catégorie genre chevron vers le bas)
 ajouter un icone aux notes
-faire un color picker ?
+faire un color picker ? default colors ?
 TOUTES les couleurs personnalisables

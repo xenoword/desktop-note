@@ -12,6 +12,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace Note_desktop.ViewModel
 {
@@ -35,8 +36,29 @@ namespace Note_desktop.ViewModel
             BtnAdd = new RelayCommand(AddNote);
             BtnRemove = new RelayCommand<NoteView>(RemoveNote);
             BtnOpenEdit = new RelayCommand<NoteView>(OpenEditNote);
+            BtnSave = new RelayCommand(SaveNoteList);
+
+            //check if data is up to date
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(100);
+            timer.Tick += CheckDataUpToDate;
+            timer.Start();
         }
 
+
+        #region Check Data Up To Date
+
+        public void CheckDataUpToDate(object sender, EventArgs e)
+        {
+            string actualData = JsonConvert.SerializeObject(NoteList);
+            string loadedData = File.ReadAllText("main.json");
+            if (actualData != loadedData)
+            {
+                ((Button)((MainWindow)((App)Application.Current).MainWindow).Template.FindName("BtnSave", ((App)Application.Current).MainWindow)).Content = "💾*";
+            }
+        }
+
+        #endregion
 
         #region Edit Note
         public IRelayCommand BtnOpenEdit { get; }
@@ -46,26 +68,7 @@ namespace Note_desktop.ViewModel
             ((App)Application.Current).EditingNoteVM.Index = NoteList.IndexOf((Note)noteView.DataContext);
             new EditNoteWindow().ShowDialog();
         }
-        #endregion
-
-        #region Save File
-        public void SaveNoteList()
-        {
-            string json = JsonConvert.SerializeObject(NoteList);
-            File.WriteAllText("main.json", json);
-        }
-        public void LoadNoteList()
-        {
-            try
-            {
-                string json = File.ReadAllText("main.json");
-                NoteList = JsonConvert.DeserializeObject<ObservableCollection<Note>>(json);
-            }
-            catch
-            {
-               NoteList = new ObservableCollection<Note>();
-            }
-        }
+        
         #endregion
 
         #region Delete Note
@@ -89,6 +92,28 @@ namespace Note_desktop.ViewModel
             Note newNote = new Note();
             NoteList.Add(newNote);
             SaveNoteList();
+        }
+        #endregion
+
+        #region Save And Load File
+
+        public IRelayCommand BtnSave { get; }
+        public void SaveNoteList()
+        {
+            string json = JsonConvert.SerializeObject(NoteList);
+            File.WriteAllText("main.json", json);
+        }
+        public void LoadNoteList()
+        {
+            try
+            {
+                string json = File.ReadAllText("main.json");
+                NoteList = JsonConvert.DeserializeObject<ObservableCollection<Note>>(json);
+            }
+            catch
+            {
+               NoteList = new ObservableCollection<Note>();
+            }
         }
         #endregion
 

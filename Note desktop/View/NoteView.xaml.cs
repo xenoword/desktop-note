@@ -18,9 +18,17 @@ namespace Note_desktop.View
     /// </summary>
     public partial class NoteView : UserControl
     {
+
         public NoteView()
         {
             InitializeComponent();
+        }
+
+
+        private void ReduceOne(object sender, RoutedEventArgs e)
+        {
+            Content.Visibility = Visibility.Visible == Content.Visibility ? Visibility.Collapsed : Visibility.Visible;
+            BtnReduceOneNote.Content = BtnReduceOneNote.Content.ToString() == "-" ? "+" : "-";
         }
     }
 }
