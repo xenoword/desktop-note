@@ -40,7 +40,7 @@ namespace Note_desktop.ViewModel
 
             //check if data is up to date
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMilliseconds(100);
+            timer.Interval = TimeSpan.FromMilliseconds(2000);
             timer.Tick += CheckDataUpToDate;
             timer.Start();
         }
@@ -48,14 +48,11 @@ namespace Note_desktop.ViewModel
 
         #region Check Data Up To Date
 
+        public bool IsDataUpToDate { get => JsonConvert.SerializeObject(NoteList) == File.ReadAllText("main.json"); }
+
         public void CheckDataUpToDate(object sender, EventArgs e)
         {
-            string actualData = JsonConvert.SerializeObject(NoteList);
-            string loadedData = File.ReadAllText("main.json");
-            if (actualData != loadedData)
-            {
-                ((Button)((MainWindow)((App)Application.Current).MainWindow).Template.FindName("BtnSave", ((App)Application.Current).MainWindow)).Content = "💾*";
-            }
+            ((Button)((MainWindow)((App)Application.Current).MainWindow).Template.FindName("BtnSave", ((App)Application.Current).MainWindow)).Content = IsDataUpToDate ? "💾" : "💾*";
         }
 
         #endregion
@@ -80,7 +77,6 @@ namespace Note_desktop.ViewModel
             if (result == MessageBoxResult.OK)
             {
                 NoteList.Remove((Note)noteView.DataContext);
-                SaveNoteList();
             }
         }
         #endregion
@@ -89,9 +85,7 @@ namespace Note_desktop.ViewModel
         public IRelayCommand BtnAdd { get; }
         public void AddNote()
         {
-            Note newNote = new Note();
-            NoteList.Add(newNote);
-            SaveNoteList();
+            NoteList.Add(new Note());
         }
         #endregion
 
@@ -122,8 +116,32 @@ namespace Note_desktop.ViewModel
 
         private void CloseWindow(Window window)
         {
-            SaveNoteList();
-            window.Close();
+            if (!IsDataUpToDate)
+            {
+                MessageBoxResult result = MessageBox.Show(App.Current.MainWindow, "Voulez vous sauvegarder vos notes avant de quitter ?", "Sauvegarder", MessageBoxButton.YesNoCancel);
+                switch (result)
+                {
+                    case MessageBoxResult.None:
+                        break;
+                    case MessageBoxResult.OK:
+                        break;
+                    case MessageBoxResult.Cancel:
+                        break;
+                    case MessageBoxResult.Yes:
+                        SaveNoteList();
+                        window.Close();
+                        break;
+                    case MessageBoxResult.No:
+                        window.Close();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                window.Close();
+            }
         }
         #endregion
     }
